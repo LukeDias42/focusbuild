@@ -17,7 +17,8 @@ And run with cargo:
 - `cargo run --release`
 
 ## How to use
-![image](https://github.com/user-attachments/assets/841c3637-b6ab-4b12-b73b-70539f4109f0)
+![image](https://github.com/user-attachments/assets/18773092-e285-4a56-8f1c-f8a6375d2d51)
+
 
 Just start a session from the main menu, and change between focus and break accordingly.
 Then press Q to save and stop the current session.
