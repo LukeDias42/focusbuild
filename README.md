@@ -12,9 +12,10 @@ FocusBuild is a simple implementation of the same idea, where you can start your
 
 ## How to install
 To install, simply clone the repository:
-- `git clone https://github.com/LukeDias42/focusbuild`
+> `git clone https://github.com/LukeDias42/focusbuild`
+
 And run with cargo:
-- `cargo run --release`
+> `cargo run --release`
 
 ## How to use
 ![image](https://github.com/user-attachments/assets/18773092-e285-4a56-8f1c-f8a6375d2d51)
