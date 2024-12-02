@@ -38,7 +38,7 @@ impl Logo {
 }
 
 impl KeyBinding {
-    fn new(keybinds: [(&str, &str); 4], gap: u16) -> Self {
+    fn new(keybinds: [(&str, &str); 3], gap: u16) -> Self {
         let height = keybinds[0].0.lines().count() as u16;
         let width = keybinds[0]
             .0
@@ -83,13 +83,13 @@ impl MainMenuFont {
         match settings.font_size {
             crate::models::settings::FontSize::Auto => {
                 if large.logo.width < width
-                    && large.keybinding.longest_description + 2 < width
-                    && large.keybinding.total_height + 2 < height
+                    && large.keybinding.longest_description + 6 < width
+                    && large.keybinding.total_height + 6 + large.logo.height < height
                 {
                     return large;
                 } else if small.logo.width < width
-                    && small.keybinding.longest_description + 2 < width
-                    && small.keybinding.total_height + 2 < height
+                    && small.keybinding.longest_description + 6 < width
+                    && small.keybinding.total_height + 6 + small.logo.height < height
                 {
                     return small;
                 }
@@ -135,7 +135,7 @@ const POMO_BUILD_LOGO_LARGE: &str =
 
 const GAP_LARGE: u16 = 1;
 // RubiFont
-const KEYBIND_STRINGS_LARGE: [(&str, &str); 4] = [
+const KEYBIND_STRINGS_LARGE: [(&str, &str); 3] = [
     (
         " ▗▄▄▖
 ▐▌   
@@ -157,16 +157,6 @@ const KEYBIND_STRINGS_LARGE: [(&str, &str); 4] = [
 ▐▙▄▄▀▐▌ ▐▌ █ ▐▌ ▐▌",
     ),
     (
-        " ▗▄▄▖
-▐▌   
-▐▌   
-▝▚▄▄▖",
-        " ▗▄▄▖ ▗▄▖ ▗▖  ▗▖▗▄▄▄▖▗▄▄▄▖ ▗▄▄▖
-▐▌   ▐▌ ▐▌▐▛▚▖▐▌▐▌     █  ▐▌   
-▐▌   ▐▌ ▐▌▐▌ ▝▜▌▐▛▀▀▘  █  ▐▌▝▜▌
-▝▚▄▄▖▝▚▄▞▘▐▌  ▐▌▐▌   ▗▄█▄▖▝▚▄▞▘",
-    ),
-    (
         "▗▄▄▄▖ 
 ▐▌ ▐▌ 
 ▐▌ ▐▌ 
@@ -186,7 +176,7 @@ const POMO_BUILD_LOGO_SMALL: &str = "   ____                  ___       _ __   _
                                             ";
 const GAP_SMALL: u16 = 0;
 // Big Fig
-const KEYBIND_STRINGS_SMALL: [(&str, &str); 4] = [
+const KEYBIND_STRINGS_SMALL: [(&str, &str); 3] = [
     (
         " __
 (_ 
@@ -204,14 +194,6 @@ __) |_(_| |  |_",
 |_/(_| |_(_|",
     ),
     (
-        " __
-/  
-\\__",
-        " __        _    _ 
-/   _ __ _|_ o (_|
-\\__(_)| | |  | __|",
-    ),
-    (
         " _ 
 / \\
 \\_X",
@@ -226,7 +208,7 @@ const POMO_BUILD_LOGO_TINY: &str = "╔═╗┌─┐┌─┐┬ ┬┌─┐�
 ╚  └─┘└─┘└─┘└─┘╚═╝└─┘┴┴─┘─┴┘";
 
 // Calvin S
-const KEYBIND_STRINGS_TINY: [(&str, &str); 4] = [
+const KEYBIND_STRINGS_TINY: [(&str, &str); 3] = [
     (
         "╔═╗
 ╚═╗
@@ -242,14 +224,6 @@ const KEYBIND_STRINGS_TINY: [(&str, &str); 4] = [
         "╔╦╗┌─┐┌┬┐┌─┐
  ║║├─┤ │ ├─┤
 ═╩╝┴ ┴ ┴ ┴ ┴",
-    ),
-    (
-        "╔═╗
-║  
-╚═╝",
-        "╔═╗┌─┐┌┐┌┌─┐┬┌─┐
-║  │ ││││├┤ ││ ┬
-╚═╝└─┘┘└┘└  ┴└─┘",
     ),
     (
         "╔═╗ 
